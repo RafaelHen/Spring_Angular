@@ -7,11 +7,11 @@ import { CursosService } from '../services/cursos.service';
 @Component({
   selector: 'app-cursos',
   templateUrl: './cursos.component.html',
-  styleUrls: ['./cursos.component.css']
+  styleUrls: ['./cursos.component.scss']
 })
 export class CursosComponent implements OnInit {
 
-  cursos: Observable<Cursos[]>;
+  cursos$: Observable<Cursos[]>;
   displayedColumns = ['nome', 'categoria'];
 
   //cursosService: CursosService;
@@ -19,7 +19,7 @@ export class CursosComponent implements OnInit {
   constructor(private cursosService: CursosService) {
     //this.cursos = [];
     //this.cursosService = new CursosService();
-    this.cursos = this.cursosService.lista();
+    this.cursos$ = this.cursosService.lista();
     
   }
   
